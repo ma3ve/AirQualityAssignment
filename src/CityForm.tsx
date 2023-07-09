@@ -9,7 +9,11 @@ const toTitleCase = (str: string) => {
     .join(' ')
 }
 
-function CityForm() {
+interface Props {
+  onUpdate: (value: any) => void
+}
+
+function CityForm({ onUpdate }: Props) {
   const [value, setValue] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -39,6 +43,7 @@ function CityForm() {
       } else {
         setApiCallError('')
         setResp(resp.data.results[0])
+        onUpdate(resp.data.results[0])
       }
     } catch (error: any) {
       if (error.response) {
