@@ -1,0 +1,11 @@
+.cityForm {
+  width: 100%;
+  padding: 10px;
+}
+.twoCityForm {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
